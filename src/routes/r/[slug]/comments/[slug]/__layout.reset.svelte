@@ -1,3 +1,4 @@
+<!-- Load reddit-page and save to store -->
 <script lang="ts" context="module">
     import { submissionStore } from '$lib/stores';
 
@@ -14,11 +15,14 @@
 </script>
 
 <script lang="ts">
+//  imports
     import Footer from '$lib/compontents/Footer/Footer.svelte';
     import Header from '$lib/compontents/Header/Header.svelte';
 
+//  props
     export let submission;
 </script>
+
 
 <Header />
 <slot />
