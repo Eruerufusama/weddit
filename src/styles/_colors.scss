@@ -1,0 +1,60 @@
+// Mods
+$fg-saturation: 0%;
+$fg-lightness: 0%;
+
+$fg-hue: 30;
+$bg-hue: 210;
+
+$light-theme-fg-saturation: 0%;
+$light-theme-bg-saturation: 20%;
+$light-theme-darkest: 0%;     // 0% - 72%
+$light-theme-brightest: 100%; // 30% - 100%
+
+$dark-theme-fg-saturation: 0%;
+$dark-theme-bg-saturation: 0%;
+$dark-theme-darkest: 7%;      // 0% - 85%
+$dark-theme-brightest: 100%;  // 0% - 72%
+
+
+$colors: (
+    'light': (
+        'text-100': hsl($fg-hue, $light-theme-fg-saturation, clamp(0%, $light-theme-darkest + 0%, 100%)),
+        'text-200': hsl($fg-hue, $light-theme-fg-saturation, clamp(0%, $light-theme-darkest + 4%, 100%)),
+        'text-300': hsl($fg-hue, $light-theme-fg-saturation, clamp(0%, $light-theme-darkest + 8%, 100%)),
+        'text-400': hsl($fg-hue, $light-theme-fg-saturation, clamp(0%, $light-theme-darkest + 12%, 100%)),
+        'text-500': hsl($fg-hue, $light-theme-fg-saturation, clamp(0%, $light-theme-darkest + 16%, 100%)),
+        'text-600': hsl($fg-hue, $light-theme-fg-saturation, clamp(0%, $light-theme-darkest + 20%, 100%)),
+        'text-700': hsl($fg-hue, $light-theme-fg-saturation, clamp(0%, $light-theme-darkest + 24%, 100%)),
+        'text-800': hsl($fg-hue, $light-theme-fg-saturation, clamp(0%, $light-theme-darkest + 28%, 100%)),
+        'text-emphasis': hsl(214, 64%, 36%),
+        'bg-1': hsl($bg-hue, $light-theme-bg-saturation, clamp(0%, $light-theme-brightest - 0%, 100%)),
+        'bg-2': hsl($bg-hue, $light-theme-bg-saturation, clamp(0%, $light-theme-brightest - 12%, 100%)),
+        'bg-3': hsl($bg-hue, $light-theme-bg-saturation, clamp(0%, $light-theme-brightest - 22%, 100%)),
+        'bg-4': hsl($bg-hue, $light-theme-bg-saturation, clamp(0%, $light-theme-brightest - 30%, 100%)),
+        ),
+    'dark': (
+        'text-100': hsl($fg-hue, $dark-theme-fg-saturation, clamp(0%, $dark-theme-brightest - 0%, 100%)),
+        'text-200': hsl($fg-hue, $dark-theme-fg-saturation, clamp(0%, $dark-theme-brightest - 4%, 100%)),
+        'text-300': hsl($fg-hue, $dark-theme-fg-saturation, clamp(0%, $dark-theme-brightest - 8%, 100%)),
+        'text-400': hsl($fg-hue, $dark-theme-fg-saturation, clamp(0%, $dark-theme-brightest - 12%, 100%)),
+        'text-500': hsl($fg-hue, $dark-theme-fg-saturation, clamp(0%, $dark-theme-brightest - 16%, 100%)),
+        'text-600': hsl($fg-hue, $dark-theme-fg-saturation, clamp(0%, $dark-theme-brightest - 20%, 100%)),
+        'text-700': hsl($fg-hue, $dark-theme-fg-saturation, clamp(0%, $dark-theme-brightest - 24%, 100%)),
+        'text-800': hsl($fg-hue, $dark-theme-fg-saturation, clamp(0%, $dark-theme-brightest - 28%, 100%)),
+        'text-emphasis': hsl(209, 100%, 72%),
+        'bg-1': hsl($bg-hue, $dark-theme-bg-saturation, clamp(0%, $dark-theme-darkest + 0%, 100%)),
+        'bg-2': hsl($bg-hue, $dark-theme-bg-saturation, clamp(0%, $dark-theme-darkest + 4%, 100%)),
+        'bg-3': hsl($bg-hue, $dark-theme-bg-saturation, clamp(0%, $dark-theme-darkest + 7%, 100%)),
+        'bg-4': hsl($bg-hue, $dark-theme-bg-saturation, clamp(0%, $dark-theme-darkest + 10%, 100%)),
+    )
+);
+
+:root {
+    @each $theme, $scheme in $colors {
+        @media (prefers-color-scheme: $theme) {
+            @each $key, $color-value in $scheme {
+                --color-#{$key}: #{$color-value};
+            }
+        }
+    }
+}
