@@ -1,5 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
-import postcssPresetEnv from 'postcss-preset-env';
+import adapter from '@sveltejs/adapter-netlify';
 import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
