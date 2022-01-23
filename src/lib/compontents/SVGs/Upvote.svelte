@@ -13,6 +13,7 @@
 
 <style lang="scss">
     svg {
-        max-height: 2rem;
+        //  Layout
+            max-height: 2rem;
     }
 </style>

@@ -1,11 +1,14 @@
 <script lang="ts">
+
+//  Imports
     import { getTimeSincePosted } from '$lib/functions/time';
 
+//  Props
     export let created: number;
     export let author: string;
-
     const { time, format } = getTimeSincePosted(created)
     const suffix = time === 1 ? '' : 's';
+
 </script>
 
 <div>
@@ -19,15 +22,17 @@
 
 <style lang="scss">
     div {
-        gap: 0.25rem 1rem;
+        //  Layout
+            gap: 0.25rem 1rem;
 
         p {
             display: inline;
         }
 
         @media (max-width: 540px) {
-            display: flex;
-            flex-direction: column;
+            //  Layout
+                display: flex;
+                flex-direction: column;
 
             p {
                 display: inline;

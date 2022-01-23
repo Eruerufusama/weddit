@@ -1,13 +1,16 @@
 <script lang="ts">
-    import type { RedditPost } from '$lib/types/subredditPosts';
+
+//  Imports
     import Comments from './SubComponents/_Comments.svelte';
     import Image from './SubComponents/_Image.svelte';
     import Metadata from './SubComponents/_Metadata.svelte';
     import Title from './SubComponents/_Title.svelte';
+    import type { RedditPost } from '$lib/types/subredditPosts';
 
+//  Props
     export let post: RedditPost;
-
     const { thumbnail, title, created, author, num_comments, url, permalink } = post;
+
 </script>
 
 <article>
@@ -25,29 +28,33 @@
     $rounding: 0.5rem;
 
     article {
-        display: flex;
-        flex-direction: column;
-        min-width: 100%;
+        //  Layout
+            display: flex;
+            flex-direction: column;
+            min-width: 100%;
 
         section {
-            display: flex;
-            align-items: center;
-
+            // Layout
+                display: flex;
+                align-items: center;
         }
         .top-section {
-            gap: 2rem;
-            padding: 1rem;
-            background-color: var(--color-bg-3);
-            border-top-left-radius: $rounding;
-            border-top-right-radius: $rounding;
-
+            //  Layout
+                gap: 2rem;
+                padding: 1rem;
+            //  Styling
+                background-color: var(--color-bg-3);
+                border-top-left-radius: $rounding;
+                border-top-right-radius: $rounding;
         }
         .bottom-section {
-            justify-content: space-between;
-            padding: 0.75rem 1rem;
-            background-color: var(--color-bg-1);
-            border-bottom-left-radius: $rounding;
-            border-bottom-right-radius: $rounding;
+            //  Layout
+                justify-content: space-between;
+                padding: 0.75rem 1rem;
+            //  Styling
+                background-color: var(--color-bg-1);
+                border-bottom-left-radius: $rounding;
+                border-bottom-right-radius: $rounding;
         }
     }
 </style>

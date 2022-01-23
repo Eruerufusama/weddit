@@ -14,13 +14,16 @@
 
 <style lang="scss">
     div {
-        display: grid;
-        place-items: center;
+        //  Layout
+            display: grid;
+            place-items: center;
+
         main {
-            width: 960px;
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
+            //  Layout
+                width: 960px;
+                display: flex;
+                flex-direction: column;
+                gap: 1.25rem;
         }
     }
 </style>

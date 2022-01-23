@@ -1,18 +1,19 @@
 <script>
+
+//  Imports
     import Button from "./SubComponents/_Button.svelte";
     import AuthoringData from "./SubComponents/_AuthoringData.svelte";
     import Comments from "./Comments.svelte";
 
+//  Props
     export let comment;
-
     const { body, author, created, score, ups, downs } = comment;
 
-    const authData = { created, author };
-
+//  States
     let showBody = true;
     let symbol = '-';
-
     $: showBody ? symbol = '-' : symbol = '+';
+
 </script>
 
 
@@ -23,7 +24,7 @@
                 on:click={() => showBody = !showBody}
                 {symbol}
             />
-            <AuthoringData {...authData} />
+            <AuthoringData {author} {created} />
         </div>
     </section>
     {#if showBody }
@@ -40,33 +41,38 @@
 
 <style lang="scss">
     article {
-        box-shadow: -5px 0 5px 0 hsla(0, 0%, 0%, 0.2);
+        //  Styling
+            box-shadow: -5px 0 5px 0 hsla(0, 0%, 0%, 0.2);
         
         .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-    
-            background-color: var(--color-bg-1);
-    
-            div {
+            //  Layout
                 display: flex;
+                justify-content: space-between;
                 align-items: center;
+            //  Styling
+                background-color: var(--color-bg-1);
+
+            div {
+                //  Layout
+                    display: flex;
+                    align-items: center;
             }
         }
-    
+
         .body {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-    
-            padding: 1.25rem 0 1.25rem 1.25rem;
-    
-            background-color: var(--color-bg-3);
-    
+            //  Layout
+                display: flex;
+                flex-direction: column;
+                gap: 1.25rem;
+                padding: 1.25rem 0 1.25rem 1.25rem;
+            //  Styling
+                background-color: var(--color-bg-3);
+
             p {
-                padding-right: 1.25rem;
-                color: var(--color-text-200);
+                //  Layout
+                    padding-right: 1.25rem;
+                //  Styling
+                    color: var(--color-text-200);
             }
         }
     }

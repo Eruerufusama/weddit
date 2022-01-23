@@ -13,12 +13,15 @@
 
 <style lang="scss">
     main {
-        display: grid;
-        place-items: center;
-        div {
+        //  Layout
             display: grid;
-            gap: 1rem;
-            max-width: 960px;
+            place-items: center;
+
+        div {
+            //  Layout
+                display: grid;
+                gap: 1rem;
+                max-width: 960px;
         }
     }
 </style>
