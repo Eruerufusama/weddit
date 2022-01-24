@@ -7,7 +7,6 @@
 //  props
     export let data: SubmissionComments;
     const comments: CommentType[] = data.data.children.map(({ data }) => data);
-
 </script>
 
 

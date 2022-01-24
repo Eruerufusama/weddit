@@ -10,9 +10,9 @@ $colors: (
         'background-3': hsl(0, 0%, 5%),
 
         'user': hsl(209, 41%, 60%),
-        'upvotes': hsl(34, 54%, 57%),
-        'downvotes': hsl(239, 53%, 60%),
         'shadow': hsla(0, 0%, 0%, 0.2),
+        'op': hsl(233, 50%, 9%),
+        'mod': hsl(112, 46%, 18%),
     ),
     'light': (
 
@@ -25,9 +25,9 @@ $colors: (
         'background-3': hsl(0, 0%, 90%),
 
         'user': hsl(209, 53%, 51%),
-        'upvotes': hsl(34, 74%, 64%),
-        'downvotes': hsl(239, 100%, 75%),
         'shadow': hsla(0, 0%, 0%, 0.12),
+        'op': hsl(210, 85%, 79%),
+        'mod': hsl(111, 100%, 83%),
     ),
 );
 

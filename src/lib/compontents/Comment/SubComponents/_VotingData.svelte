@@ -1,11 +1,16 @@
 <script>
     export let score;
+    export let score_hidden;
 </script>
 
 <div class="votes">
     <p class="votes__total">
-        <strong>{ score }</strong>
-        points
+        {#if score_hidden }
+            Score hidden
+        {:else }
+            <strong>{ score }</strong>
+            points
+        {/if }
     </p>
 </div>
 

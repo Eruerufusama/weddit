@@ -5,21 +5,22 @@
     import AuthoringData from "./SubComponents/_AuthoringData.svelte";
     import Comments from "./Comments.svelte";
     import VotingData from "./SubComponents/_VotingData.svelte";
-import Minus from "../SVGs/Minus.svelte";
-import Plus from "../SVGs/Plus.svelte";
+    import Minus from "../SVGs/Minus.svelte";
+    import Plus from "../SVGs/Plus.svelte";
 
 //  Props
     export let comment;
-    const { body, author, created, score } = comment;
+    const { body, author, created, score, score_hidden, is_submitter, distinguished } = comment;
 
 //  States
     let showBody = true;
 
+    console.log(comment);
 </script>
 
 
 <article>
-    <section class="header">
+    <section class={`header ${is_submitter && 'op'} ${distinguished === 'moderator' && 'mod'}`}>
         <div class="left">
 
             <Button on:click={() => showBody = !showBody}>
@@ -29,7 +30,7 @@ import Plus from "../SVGs/Plus.svelte";
 
         </div>
 
-        <VotingData {score} />
+        <VotingData {score} {score_hidden} />
 
     </section>
 
@@ -57,12 +58,20 @@ import Plus from "../SVGs/Plus.svelte";
                 align-items: center;
             //  Styling
                 background-color: var(--color-background-3);
-
-            div {
-                //  Layout
+        
+                div {
+                    //  Layout
                     display: flex;
                     align-items: center;
+                }
             }
+        .op {
+            //  Styling
+                background-color: var(--color-op);
+        }
+        .mod {
+            //  Styling
+                background-color: var(--color-mod);
         }
 
         .body {
