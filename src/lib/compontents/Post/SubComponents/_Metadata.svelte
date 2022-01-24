@@ -27,7 +27,7 @@
 
         p {
             display: inline;
-            color: var(--color-text-700);
+            color: var(--color-foreground-dimmed);
             font-family: 'Roboto Condensed', sans-serif;
         }
 

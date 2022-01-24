@@ -13,7 +13,7 @@
             font-size: 2rem;
         //  Styling
             border: none;
-            background-color: var(--color-bg-3);
+            background-color: var(--color-background-1);
             color: inherit;
     }
 </style>

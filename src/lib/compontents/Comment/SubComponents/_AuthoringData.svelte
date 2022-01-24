@@ -22,7 +22,7 @@
     p {
         //  Layout
             padding: 0 1.25rem;
-            color: var(--color-text-700);
+            color: var(--color-foreground-dimmed);
             font-family: 'Roboto Condensed', sans-serif;
     }
 </style>

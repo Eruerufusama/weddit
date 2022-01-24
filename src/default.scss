@@ -1,8 +1,8 @@
 :root {
     font-size: 12px;
     font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
-    background-color: var(--color-bg-2);
-    color: var(--color-text-200);
+    background-color: var(--color-background-2);
+    color: var(--color-foreground-1);
 }
 
 body {
@@ -45,16 +45,20 @@ a {
 }
 
 strong {
-    color: var(--color-text-400);
+    color: var(--color-foreground-2);
     font-weight: 600;
 }
 
 em {
-    color: var(--color-text-emphasis);
+    color: var(--color-user);
     font-weight: 600;
     font-style: normal;
 }
 
 ul, li {
-    color: var(--col)
+    
+}
+button {
+    border: none;
+    background-color: inherit;
 }

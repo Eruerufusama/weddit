@@ -4,6 +4,7 @@
     import Button from "./SubComponents/_Button.svelte";
     import AuthoringData from "./SubComponents/_AuthoringData.svelte";
     import Comments from "./Comments.svelte";
+    import VotingData from "./SubComponents/_VotingData.svelte";
 
 //  Props
     export let comment;
@@ -26,6 +27,7 @@
             />
             <AuthoringData {author} {created} />
         </div>
+        <VotingData {score} {ups} {downs} />
     </section>
     {#if showBody }
     <section class="body">
@@ -42,7 +44,7 @@
 <style lang="scss">
     article {
         //  Styling
-            box-shadow: -5px 0 5px 0 hsla(0, 0%, 0%, 0.2);
+            box-shadow: -5px 0 5px 0 var(--color-shadow);
         
         .header {
             //  Layout
@@ -50,7 +52,7 @@
                 justify-content: space-between;
                 align-items: center;
             //  Styling
-                background-color: var(--color-bg-1);
+                background-color: var(--color-background-3);
 
             div {
                 //  Layout
@@ -66,14 +68,14 @@
                 gap: 1.25rem;
                 padding: 1.25rem 0 1.25rem min(1.25rem, 2vw);
             //  Styling
-                background-color: var(--color-bg-3);
+                background-color: var(--color-background-1);
 
             p {
                 //  Layout
                     padding-right: 1.25rem;
                     line-height: 2rem;
                 //  Styling
-                    color: var(--color-text-200);
+                    color: var(--color-foreground-1);
             }
         }
     }

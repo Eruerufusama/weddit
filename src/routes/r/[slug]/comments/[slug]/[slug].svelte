@@ -2,14 +2,17 @@
     import Comments from "$lib/compontents/Comment/Comments.svelte";
     import Post from "$lib/compontents/Post/Post.svelte";
     import { submissionStore } from "$lib/stores";
+
+    const post = $submissionStore[0].data.children[0].data;
+    const data = $submissionStore[1];
 </script>
 
 <div>
     <aside>
-        <Post post={$submissionStore[0].data.children[0].data} />
+        <Post {post} />
     </aside>
     <main>
-        <Comments data={$submissionStore[1]} />
+        <Comments {data} />
     </main>
 </div>
 
@@ -18,7 +21,7 @@
         //  Layout
             display: grid;
             place-items: center;
-            gap: 2rem;
+            gap: 2.5rem;
 
         main, aside {
             //  Layout
