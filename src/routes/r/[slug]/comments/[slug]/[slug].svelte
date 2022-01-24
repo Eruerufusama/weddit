@@ -2,8 +2,6 @@
     import Comments from "$lib/compontents/Comment/Comments.svelte";
     import Post from "$lib/compontents/Post/Post.svelte";
     import { submissionStore } from "$lib/stores";
-
-    console.log($submissionStore);
 </script>
 
 <div>

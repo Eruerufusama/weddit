@@ -9,14 +9,13 @@
 
 //  Props
     export let post: RedditPost;
-    const { thumbnail, title, created, author, num_comments, url, permalink } = post;
-
+    const { thumbnail, title, created, author, num_comments, url, permalink, is_self } = post;
 </script>
 
 <article>
     <section class="top-section">
         <Image {thumbnail} />
-        <Title {title} {url} />
+        <Title {title} url={is_self ? permalink : url} />
     </section>
     <section class="bottom-section">
         <Metadata {created} {author} />
@@ -32,6 +31,9 @@
             display: flex;
             flex-direction: column;
             min-width: 100%;
+
+        //  Styling
+            box-shadow: 0px 0 15px 0px hsla(0, 0%, 0%, 0.2);
 
         section {
             // Layout

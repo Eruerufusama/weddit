@@ -4,7 +4,7 @@
 
 <img
     src={
-            (thumbnail === 'self' || thumbnail === 'default')
+            (thumbnail === 'self' || thumbnail === 'default' || thumbnail === 'nsfw')
                 ? '/reddit-icon.png'
                 : thumbnail
         }

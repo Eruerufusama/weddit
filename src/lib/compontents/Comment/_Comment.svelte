@@ -64,13 +64,14 @@
                 display: flex;
                 flex-direction: column;
                 gap: 1.25rem;
-                padding: 1.25rem 0 1.25rem 1.25rem;
+                padding: 1.25rem 0 1.25rem min(1.25rem, 2vw);
             //  Styling
                 background-color: var(--color-bg-3);
 
             p {
                 //  Layout
                     padding-right: 1.25rem;
+                    line-height: 2rem;
                 //  Styling
                     color: var(--color-text-200);
             }

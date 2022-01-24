@@ -27,6 +27,8 @@
 
         p {
             display: inline;
+            color: var(--color-text-700);
+            font-family: 'Roboto Condensed', sans-serif;
         }
 
         @media (max-width: 540px) {
