@@ -9,10 +9,13 @@
 
 <p>
     <a href={permalink}>
-        <strong>{ num_comments }</strong> comment{ suffix }
+        <strong>{ num_comments }</strong>
+        comment{ suffix }
     </a>
 </p>
 
 <style lang="scss">
-
+    p {
+        color: var(--color-foreground-dimmed);
+    }
 </style>

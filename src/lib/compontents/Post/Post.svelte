@@ -7,6 +7,8 @@
     import Title from './SubComponents/_Title.svelte';
     import { appendDataOfImage } from '$lib/functions/isImage';
     import type { RedditPost } from '$lib/types/subredditPosts';
+import Minus from '../SVGs/Minus.svelte';
+import Plus from '../SVGs/Plus.svelte';
 
 //  Props
     export let post: RedditPost;
@@ -24,7 +26,11 @@
     <section class="middle-section">
         {#if selftext }
             <button on:click={() => isOpen = !isOpen}>
-                +
+                {#if isOpen }
+                    <Minus />
+                {:else }
+                    <Plus />
+                {/if }
             </button>
             {#if isOpen }
                 <p class="selftext">
@@ -34,7 +40,11 @@
         {/if}
         {#if image.isImage }
             <button on:click={() => isOpen = !isOpen}>
-                +
+                {#if isOpen }
+                    <Minus />
+                {:else }
+                    <Plus />
+                {/if }
             </button>
             {#if isOpen }
                 <img src={image.url} alt="Reddit image" />

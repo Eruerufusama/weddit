@@ -1,9 +1,5 @@
-<script>
-    export let symbol;
-</script>
-
 <button on:click>
-    { symbol }
+    <slot />
 </button>
 
 <style lang="scss">

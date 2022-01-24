@@ -21,7 +21,7 @@
             //  Layout
                 display: grid;
                 gap: 1rem;
-                max-width: 1440px;
+                width: min(1440px, 95vw);
         }
     }
 </style>

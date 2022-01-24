@@ -5,15 +5,15 @@
     import AuthoringData from "./SubComponents/_AuthoringData.svelte";
     import Comments from "./Comments.svelte";
     import VotingData from "./SubComponents/_VotingData.svelte";
+import Minus from "../SVGs/Minus.svelte";
+import Plus from "../SVGs/Plus.svelte";
 
 //  Props
     export let comment;
-    const { body, author, created, score, ups, downs } = comment;
+    const { body, author, created, score } = comment;
 
 //  States
     let showBody = true;
-    let symbol = '-';
-    $: showBody ? symbol = '-' : symbol = '+';
 
 </script>
 
@@ -21,14 +21,18 @@
 <article>
     <section class="header">
         <div class="left">
-            <Button
-                on:click={() => showBody = !showBody}
-                {symbol}
-            />
+
+            <Button on:click={() => showBody = !showBody}>
+                {#if showBody } <Minus /> {:else } <Plus /> {/if }
+            </Button>
             <AuthoringData {author} {created} />
+
         </div>
-        <VotingData {score} {ups} {downs} />
+
+        <VotingData {score} />
+
     </section>
+
     {#if showBody }
     <section class="body">
         <p>{ body }</p>

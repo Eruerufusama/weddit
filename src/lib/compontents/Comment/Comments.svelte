@@ -12,7 +12,9 @@
 
 
 {#each comments as comment }
-    <Comment {comment} />
+    {#if comment.body }
+        <Comment {comment} />
+    {/if }
 {/each }
 
 
