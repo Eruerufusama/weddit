@@ -5,12 +5,15 @@
     import Image from './SubComponents/_Image.svelte';
     import Metadata from './SubComponents/_Metadata.svelte';
     import Title from './SubComponents/_Title.svelte';
+    import { appendDataOfImage } from '$lib/functions/isImage';
     import type { RedditPost } from '$lib/types/subredditPosts';
 
 //  Props
     export let post: RedditPost;
     export let isOpen = true;
     const { thumbnail, title, created, author, num_comments, url, permalink, is_self, selftext } = post;
+
+    const image = appendDataOfImage(url);
 </script>
  
 <article>
@@ -27,6 +30,14 @@
                 <p class="selftext">
                     { selftext }
                 </p>
+            {/if }
+        {/if}
+        {#if image.isImage }
+            <button on:click={() => isOpen = !isOpen}>
+                +
+            </button>
+            {#if isOpen }
+                <img src={image.url} alt="Reddit image" />
             {/if }
         {/if}
     </section>
@@ -77,6 +88,11 @@
                 background-color: var(--color-background-1);
                 color: var(--color-foreground-2);
                 border-radius: 2.5rem;
+            }
+            
+            img {
+                max-width: 100%;
+                padding: 0.25rem min(2.5rem, 3vw) 2rem min(2.5rem, 3vw);
             }
         }
         .bottom-section {
