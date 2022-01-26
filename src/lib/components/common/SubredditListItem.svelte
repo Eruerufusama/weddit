@@ -1,4 +1,6 @@
 <script lang="ts">
+import Close from "../SVGs/Close.svelte";
+
     export let subreddit;
 </script>
 
@@ -8,7 +10,7 @@
         { subreddit }
     </a></h3>
     <button on:click>
-        X
+        <Close />
     </button>
 </li>
 
@@ -16,14 +18,18 @@
 <style lang="scss">
     li {
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        gap: 1.25rem;
+        padding: 1.25rem;
+        border-radius: 0.625rem;
+        background-color: var(--color-background-1);
+    }
+    h3 {
+        padding: 1.25rem;
+    }
+    button {
+        color: var(--color-foreground-dimmed)
     }
 
-    button {
-        font-size: 2rem;
-        background-color: var(--color-foreground-dimmed);
-        color: var(--color-background-3);
-        padding: 0 1.25rem
-    }
+
 </style>
