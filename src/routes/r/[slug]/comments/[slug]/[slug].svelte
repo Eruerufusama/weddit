@@ -1,7 +1,7 @@
 <script lang="ts">
     import Comments from "$lib/compontents/Comment/Comments.svelte";
     import Post from "$lib/compontents/Post/Post.svelte";
-    import { submissionStore } from "$lib/stores";
+    import { submissionStore } from "$lib/stores/data/stores";
 
     const post = $submissionStore[0].data.children[0].data;
     const data = $submissionStore[1];

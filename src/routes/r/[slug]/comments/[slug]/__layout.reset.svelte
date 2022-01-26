@@ -1,6 +1,6 @@
 <!-- Load reddit-page and save to store -->
 <script lang="ts" context="module">
-    import { submissionStore } from '$lib/stores';
+    import { submissionStore } from '$lib/stores/data/stores';
 
     export async function load({ url }) {
         const response = await fetch(`https://www.reddit.com/${url.pathname}.json`);

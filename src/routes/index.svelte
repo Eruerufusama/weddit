@@ -1,7 +1,3 @@
-<script lang="ts">
-    
-</script>
-
 <h1>Choose to visit a subreddit...</h1>
 <main>
     <article>
@@ -24,6 +20,7 @@
     </article>
 </main>
 <p>Or just, you know, type it in the url, like a normal person...</p>
+
 
 <style lang="scss">
     h1 {

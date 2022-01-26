@@ -2,8 +2,7 @@
 
 //  Imports
     import sanitizeData from '$lib/functions/sanitizeData';
-    import { postsStore } from '$lib/stores';
-
+    import { postsStore } from '$lib/stores/data/stores';
     import type { RedditPosts } from '$lib/types/subredditPosts';
 
 //  Logic

@@ -1,15 +1,19 @@
 <script lang="ts">
     import Post from "$lib/compontents/Post/Post.svelte";
-    import { postsStore } from "$lib/stores";
-
+    import Settings from "$lib/compontents/Settings/Settings.svelte";
+    import { postsStore } from "$lib/stores/data/stores";
 </script>
+
+
 <main>
+    <Settings />
     <div>
         {#each $postsStore as post}
             <Post {post} />
         {/each}
     </div>
 </main>
+
 
 <style lang="scss">
     main {

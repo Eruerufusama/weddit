@@ -1,33 +1,15 @@
-<script lang="ts">
-    export let thumbnail;
+<script>
+    export let image;
+    export let showImage;
 </script>
 
-<img
-    src={
-            (thumbnail === 'self' || thumbnail === 'default' || thumbnail === 'nsfw')
-                ? '/reddit-icon.png'
-                : thumbnail
-        }
-    alt="Thumbnail"
->
+{#if showImage}
+    <img src={image.url} alt="Reddit image" />
+{/if}
 
 <style lang="scss">
     img {
-        //  Layout
-            height: 96px;
-            width: 96px;
-        //  Styling
-            border-radius: 0.5rem;
-
-        @media (max-width: 640px) {
-            //  Layout
-                height: 64px;
-                width: 64px;
-            //  Styling
-                border-radius: 1rem;
-        }
-        @media (max-width: 380px) {
-            display: none;
-        }
+        max-width: 100%;
+        padding: 0.25rem min(2.5rem, 3vw) 2rem min(2.5rem, 3vw);
     }
 </style>
