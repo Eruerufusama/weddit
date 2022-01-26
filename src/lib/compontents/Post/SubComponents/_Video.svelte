@@ -1,17 +1,22 @@
 <script lang="ts">
     export let video;
     export let showVideo;
+
+    let isMuted = false;
 </script>
 
 {#if showVideo}
     <video
-        autoplay={true}
-        src={video}
-        playsinline={true}  
-        webkit-playsinline="true"
+        autoplay
+        playsinline 
+        webkit-playsinline
         preload="auto"
         loop={true}
-    ><track kind="captions"></video>
+        controls
+    >
+        <track kind="captions">
+        <source src={video} />
+    </video>
 {/if}
 
 <style lang="scss">

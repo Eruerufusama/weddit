@@ -11,7 +11,7 @@
     import Video from './SubComponents/_Video.svelte';
     import { appendDataOfImage } from '$lib/functions/isImage';
     import type { RedditPost } from '$lib/types/subredditPosts';
-    import { showAllImagesStore, showAllSelfpostsStore } from '$lib/stores/settings/autoShow';
+    import { showAllImagesStore, showAllSelfpostsStore, showAllVideosStore } from '$lib/stores/settings/autoShow';
 
 //  Props
     export let post: RedditPost;
@@ -33,7 +33,7 @@
 //  States
     $: showImage = $showAllImagesStore;
     $: showSelftext = $showAllSelfpostsStore;
-    $: showVideo = true;
+    $: showVideo = $showAllVideosStore;
 
 </script>
  
@@ -55,6 +55,7 @@
             <Image {image} {showImage} />
         {/if}
         {#if video}
+            <Button on:click={() => showVideo = !showVideo} isOpen={showVideo}/>
             <Video {video} {showVideo} />
         {/if}
     </section>

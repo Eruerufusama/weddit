@@ -1,28 +1,51 @@
 <script lang="ts">
-    import { showAllImagesStore, showAllSelfpostsStore } from '$lib/stores/settings/autoShow';
+    import { showAllImagesStore, showAllSelfpostsStore, showAllVideosStore } from '$lib/stores/settings/autoShow';
+
+    let toggleImages = $showAllImagesStore;
+    let toggleVideos = $showAllVideosStore;
+    let toggleSelfposts = $showAllSelfpostsStore;
+    
+    $: showAllImagesStore.update(() => toggleImages)
+    $: showAllVideosStore.update(() => toggleVideos)
+    $: showAllSelfpostsStore.update(() => toggleSelfposts)
 </script>
 
-<div>
-    <button on:click={() => {showAllImagesStore.update(() => !$showAllImagesStore)}}>
-        Show/Hide Images
-    </button>
-    <button on:click={() => {showAllSelfpostsStore.update(() => !$showAllSelfpostsStore)}}>
-        Show/Hide Self-posts
-    </button>
-</div>
+<ul>
+    <li on:click={() => toggleImages = !toggleImages}>
+        <label for="img">Show all images</label>
+        <input name="img" type="checkbox" bind:checked={toggleImages} />
+    </li>
+    <li on:click={() => toggleVideos = !toggleVideos}>
+        <label for="vid">Show all videos</label>
+        <input name="vid" type="checkbox" bind:checked={toggleVideos} />
+    </li>
+    <li on:click={() => toggleSelfposts = !toggleSelfposts}>
+        <label for="self">Show all self-posts</label>
+        <input name="self" type="checkbox" bind:checked={toggleSelfposts} />
+    </li>
+</ul>
 
 <style lang="scss">
-    div {
-        padding: 2.5rem;
+    ul {
         display: flex;
-        gap: 1.25rem;
+        // flex-direction: column;
+        gap: 0.625rem;
 
-        button {
-            color: var(--color-foreground-2);
-            background-color: var(--color-background-1);
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.25rem;
             padding: 1.25rem;
-            border: 2px solid var(--color-foreground-dimmed);
-            border-radius: 2.5rem;
+            background-color: var(--color-background-1);
+            border-radius: 0.5rem;
+            color: var(--color-foreground-dimmed);
+            transition: color 0.25s;
+
+            &:hover {
+                color: var(--color-foreground-2);
+                transition: color 0.25s;
+            }
         }
     }
 </style>
