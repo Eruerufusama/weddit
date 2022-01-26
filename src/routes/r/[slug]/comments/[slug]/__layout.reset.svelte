@@ -16,8 +16,8 @@
 
 <script lang="ts">
 //  imports
-    import Footer from '$lib/compontents/Footer/Footer.svelte';
-    import Header from '$lib/compontents/Header/Header.svelte';
+    import Footer from '$lib/components/Footer/Footer.svelte';
+    import Header from '$lib/components/Header/Header.svelte';
 
 //  props
     export let submission;

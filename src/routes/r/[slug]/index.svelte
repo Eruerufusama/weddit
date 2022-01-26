@@ -1,6 +1,6 @@
 <script lang="ts">
-    import Post from "$lib/compontents/Post/Post.svelte";
-    import Settings from "$lib/compontents/Settings/Settings.svelte";
+    import Post from "$lib/components/Post/Post.svelte";
+    import Settings from "$lib/components/Settings/Settings.svelte";
     import { postsStore } from "$lib/stores/data/stores";
 </script>
 

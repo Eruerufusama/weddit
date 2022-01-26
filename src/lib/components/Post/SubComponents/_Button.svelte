@@ -1,6 +1,6 @@
 <script>
-    import Plus from '$lib/compontents/SVGs/Plus.svelte'
-    import Minus from '$lib/compontents/SVGs/Minus.svelte';
+    import Plus from '$lib/components/SVGs/Plus.svelte'
+    import Minus from '$lib/components/SVGs/Minus.svelte';
 
     export let isOpen;
 </script>
