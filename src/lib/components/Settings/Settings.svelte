@@ -1,51 +1,53 @@
 <script lang="ts">
     import { showAllImagesStore, showAllSelfpostsStore, showAllVideosStore } from '$lib/stores/settings/autoShow';
+    import Cog from "$lib/components/SVGs/Cog.svelte";
+    import Checkbox from './_Checkbox.svelte';
+import Category from './_Category.svelte';
 
     let toggleImages = $showAllImagesStore;
     let toggleVideos = $showAllVideosStore;
     let toggleSelfposts = $showAllSelfpostsStore;
+
+    let isOpen = false;
     
     $: showAllImagesStore.update(() => toggleImages)
     $: showAllVideosStore.update(() => toggleVideos)
     $: showAllSelfpostsStore.update(() => toggleSelfposts)
 </script>
-
-<ul>
-    <li on:click={() => toggleImages = !toggleImages}>
-        <label for="img">Show all images</label>
-        <input name="img" type="checkbox" bind:checked={toggleImages} />
-    </li>
-    <li on:click={() => toggleVideos = !toggleVideos}>
-        <label for="vid">Show all videos</label>
-        <input name="vid" type="checkbox" bind:checked={toggleVideos} />
-    </li>
-    <li on:click={() => toggleSelfposts = !toggleSelfposts}>
-        <label for="self">Show all self-posts</label>
-        <input name="self" type="checkbox" bind:checked={toggleSelfposts} />
-    </li>
-</ul>
+<section class={isOpen && 'is-open'}>
+    <div>
+        <Category title="Show all...">
+            <Checkbox toggle={toggleImages} name="img" on:click={() => toggleImages = !toggleImages}>
+                Images
+            </Checkbox>
+            <Checkbox toggle={toggleVideos} name="vid" on:click={() => toggleVideos = !toggleVideos}>
+                Videos
+            </Checkbox>
+            <Checkbox toggle={toggleSelfposts} name="self" on:click={() => toggleSelfposts = !toggleSelfposts}>
+                Self-posts
+            </Checkbox>
+        </Category>
+    </div>
+    <Cog on:click={() => isOpen = !isOpen} {isOpen} />
+</section>
 
 <style lang="scss">
-    ul {
+    section {
         display: flex;
-        // flex-direction: column;
-        gap: 0.625rem;
-
-        li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1.25rem;
-            padding: 1.25rem;
-            background-color: var(--color-background-1);
-            border-radius: 0.5rem;
-            color: var(--color-foreground-dimmed);
-            transition: color 0.25s;
-
-            &:hover {
-                color: var(--color-foreground-2);
-                transition: color 0.25s;
-            }
-        }
+        margin-left: -50vw;
+        transition: margin-left 0.25s;
+        position: fixed;
+        transition: margin-left 0.5s;
+    }
+    .is-open {
+        margin-left: 0;
+    }
+    div {
+        background-image: linear-gradient(hsla(0, 0%, 0%, 0.5), rgba(255, 0, 204, 0));
+        height: 100%;
+        box-sizing: border-box;
+        padding: 2.5rem 2.5rem;
+        height: 100vh;
+        width: 50vw;
     }
 </style>

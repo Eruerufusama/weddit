@@ -1,5 +1,5 @@
 <script lang="ts">
-import Close from "../SVGs/Close.svelte";
+    import Close from "../SVGs/Close.svelte";
 
     export let subreddit;
 </script>

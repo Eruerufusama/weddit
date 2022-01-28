@@ -64,6 +64,7 @@
     
                 input[type=text] {
                     font-size: 2.5rem;
+                    padding: 1.25rem;
                 }
             }
         }

@@ -1,31 +1,21 @@
 <script lang="ts">
     import Post from "$lib/components/Post/Post.svelte";
-    import Settings from "$lib/components/Settings/Settings.svelte";
     import { postsStore } from "$lib/stores/data/stores";
 </script>
 
 
-<main>
-    <Settings />
-    <div>
-        {#each $postsStore as post}
-            <Post {post} />
-        {/each}
-    </div>
-</main>
+<div>
+    {#each $postsStore as post}
+        <Post {post} />
+    {/each}
+</div>
 
 
 <style lang="scss">
-    main {
+    div {
         //  Layout
             display: grid;
-            place-items: center;
-
-        div {
-            //  Layout
-                display: grid;
-                gap: 1rem;
-                width: min(960px, 90vw);
-        }
+            gap: 1rem;
+            width: min(960px, 90vw);
     }
 </style>
