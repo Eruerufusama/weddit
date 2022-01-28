@@ -9,6 +9,10 @@ $colors: (
         'background-2': hsl(0, 0%, 9%),
         'background-3': hsl(0, 0%, 5%),
 
+        'link': hsl(209, 100%, 70%),
+        'link-dimmed': hsl(220, 30%, 50%),
+        'link-hover': hsl(209, 100%, 80%),
+
         'user': hsl(209, 41%, 60%),
         'shadow': hsla(0, 0%, 0%, 0.2),
         'op': hsl(233, 50%, 9%),
@@ -23,6 +27,9 @@ $colors: (
         'background-1': hsl(0, 0%, 100%),
         'background-2': hsl(0, 0%, 83%),
         'background-3': hsl(0, 0%, 90%),
+
+        'link': hsl(209, 73%, 30%),
+        'link-dimmed': hsl(209, 33%, 40%),
 
         'user': hsl(209, 53%, 51%),
         'shadow': hsla(0, 0%, 0%, 0.12),
