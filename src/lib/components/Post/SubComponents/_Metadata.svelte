@@ -21,6 +21,9 @@
 </div>
 
 <style lang="scss">
+    em {
+        color: var(--color-user);
+    }
     div {
         //  Layout
             gap: 0.25rem 1rem;

@@ -19,6 +19,9 @@
 </p>
 
 <style lang="scss">
+    em {
+        color: var(--color-user);
+    }
     p {
         //  Layout
             padding: 0 1.25rem;

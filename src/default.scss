@@ -36,12 +36,19 @@ h6 {
 }
 p {
     font-size: 1.25rem;
-    margin: 0;
-    padding: 0;
+    color: var(--color-foreground-2)
 }
 a {
-    color: inherit;
+    color: var(--color-link);
     text-decoration: none;
+
+    &:hover, &:visited:hover {
+        color: var(--color-link-hover);
+    }
+    &:visited {
+        color: var(--color-link-dimmed);
+
+    }
 }
 
 strong {
@@ -50,9 +57,9 @@ strong {
 }
 
 em {
-    color: var(--color-user);
     font-weight: 600;
     font-style: normal;
+    color: var(--color-foreground-1)
 }
 
 // ul, li {

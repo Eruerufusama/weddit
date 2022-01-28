@@ -7,6 +7,7 @@
     import VotingData from "./SubComponents/_VotingData.svelte";
     import Minus from "../SVGs/Minus.svelte";
     import Plus from "../SVGs/Plus.svelte";
+    import { marked } from 'marked';
 
 //  Props
     export let comment;
@@ -36,7 +37,9 @@
 
     {#if showBody }
     <section class="body">
-        <p>{ body }</p>
+        <div class="markdown">
+            { @html marked(body) }
+        </div>
 
         {#if comment.replies }
             <Comments data={comment.replies} />
@@ -59,7 +62,7 @@
             //  Styling
                 background-color: var(--color-background-3);
         
-                div {
+                .left {
                     //  Layout
                     display: flex;
                     align-items: center;
@@ -83,12 +86,13 @@
             //  Styling
                 background-color: var(--color-background-1);
 
-            p {
+            .markdown {
                 //  Layout
                     padding-right: 1.25rem;
                     line-height: 2rem;
                 //  Styling
                     color: var(--color-foreground-1);
+
             }
         }
     }

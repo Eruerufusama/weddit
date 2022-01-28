@@ -17,5 +17,8 @@
 <style lang="scss">
     p {
         color: var(--color-foreground-dimmed);
+        a {
+            color: inherit;
+        }
     }
 </style>

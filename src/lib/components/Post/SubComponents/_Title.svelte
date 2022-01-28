@@ -14,6 +14,9 @@
     h3 {
         //  Styling
             font-size: 1.8rem;
+            a {
+                color: inherit;
+            }
         
         @media (max-width: 640px) {
             //  Styling

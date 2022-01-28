@@ -30,9 +30,7 @@
   },
   "type": "module",
   "dependencies": {
-    "cq-prolyfill": "^0.4.0",
-    "postcss": "^8.4.5",
-    "postcss-preset-env": "^7.2.3",
+    "marked": "^4.0.12",
     "sass": "^1.48.0"
   }
 }
