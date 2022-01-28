@@ -1,9 +1,9 @@
-<script lang="ts">
+<script>
     import { favoriteSubredditsStore } from '$lib/stores/saved/subreddits';
-    import SubredditListItem from '$lib/components/common/SubredditListItem.svelte';
+    import SubredditListItem from '../lib/components/common/SubredditListItem.svelte';
 
-    let newSub: string;
-    let subreddits: Array<any> = $favoriteSubredditsStore;
+    let newSub;
+    let subreddits = $favoriteSubredditsStore;
 
     $: $favoriteSubredditsStore = subreddits;
 
@@ -19,21 +19,29 @@
     </ul>
     <section>
         <div>
-            <input type="text" bind:value={newSub}>
-            <button on:click={() => { subreddits = [...subreddits, newSub]; newSub = ''; }}>
-                Add
+            <input type="text" bind:value={newSub} >
+            <button
+                on:click={() => {
+                    if (newSub) {
+                        subreddits = [...subreddits, newSub];
+                        newSub = '';
+                    }
+                    }}
+            >
+                Add sub
             </button>
         </div>
-        <div>
-            <h1>Add your favorite subs!</h1>
-        </div>
+        <h2>ADD YOUR ❤️<span>FAVORITE</span>❤️ SUBREDDITS</h2>
     </section>
 </main>
 
 
 <style lang="scss">
     main {
-        display: grid;
+        font-family: 'Roboto Condensed';
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         place-items: center;
         height: 100vh;
         
@@ -44,29 +52,48 @@
             gap: 2.5rem;
             padding: 2.5rem;
             justify-content: center;
+            margin: 0;
         }
-        button {
-            font-size: 2rem;
-            background-color: var(--color-foreground-dimmed);
-            color: var(--color-background-3);
-            padding: 0 1.25rem
-        }
+
         section {
+            width: 100%;
             display: grid;
-            border-radius: 5rem;
             background-color: var(--color-background-3);
-            padding: 5rem;
+            padding: 5rem 0rem;
             gap: 1.25rem;
 
-            div {
-                display: flex;
-                align-items: stretch;
-    
-                input[type=text] {
-                    font-size: 2.5rem;
-                    padding: 1.25rem;
-                }
-            }
+            
+        }
+    }
+    button {
+        font-size: 2rem;
+        background-color: var(--color-background-1);
+        border: 2px solid white;
+        color: var(--color-foreground-1);
+        padding: 0 2.5rem;
+        border-radius: 3.5rem;
+        margin-left: -3.5rem;
+    }
+
+    div {
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+
+    }
+
+    input[type=text] {
+        font-size: 2.5rem;
+        padding: 1.25rem 2.5rem;
+        border-top-left-radius: 3.5rem;
+        border-bottom-left-radius: 3.5rem;
+    }
+    h2 {
+        text-align: center;
+
+        span {
+            font-weight: 200;
+            font-style: italic;
         }
     }
 </style>
