@@ -34,20 +34,30 @@ import Category from './_Category.svelte';
 <style lang="scss">
     section {
         display: flex;
-        margin-left: -50vw;
+        
+        margin-left: clamp(-640px, -50vw, -280px);
         transition: margin-left 0.25s;
         position: fixed;
         transition: margin-left 0.5s;
     }
     .is-open {
         margin-left: 0;
+
+        div {
+            box-shadow: 5px 0 10px 5px var(--color-shadow);
+        }
     }
     div {
-        background-image: linear-gradient(hsla(0, 0%, 0%, 0.5), rgba(255, 0, 204, 0));
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        background-color: var(--color-background-2);
         height: 100%;
         box-sizing: border-box;
         padding: 2.5rem 2.5rem;
         height: 100vh;
-        width: 50vw;
+        width: clamp(280px, 50vw, 640px);
+        // border-right: 1.25rem solid var(--color-background-1);
     }
 </style>

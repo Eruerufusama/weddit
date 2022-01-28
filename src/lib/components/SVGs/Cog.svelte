@@ -36,11 +36,13 @@
         color: var(--color-foreground-2);
         padding: 1.25rem;
         border-radius: 4rem;
-        box-shadow: -5px 0 5px 0 var(--color-shadow);
         animation: rotate 10s infinite linear;
-        background-color: var(--color-background-3);
+        background-color: transparent;
         transition: background-color 0.2s;
 
+        @media (max-width: 1080px) {
+            background-color: var(--color-background-3);
+        }
         &:hover {
             background-color: var(--color-background-1);
         }

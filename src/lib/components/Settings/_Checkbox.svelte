@@ -11,7 +11,7 @@
 <style lang="scss">
     li {
         display: flex;
-        flex-grow: 1;
+        flex-grow: 1 0;
         justify-content: space-between;
         align-items: center;
         gap: 1.25rem;
@@ -20,6 +20,7 @@
         border-radius: 0.5rem;
         color: var(--color-foreground-dimmed);
         transition: color 0.25s;
+        box-sizing: border-box;
 
         label {
             flex-grow: 1;
