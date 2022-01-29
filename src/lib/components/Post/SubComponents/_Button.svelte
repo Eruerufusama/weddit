@@ -15,9 +15,12 @@
 
 <style lang="scss">
     button {
+        position: relative;
         font-size: 2rem;
-        margin-top: -2.25rem;
+        bottom: -2rem;
+        margin-top: -4rem;
         padding: 0.75rem 1.25rem;
+        
         background-color: var(--color-background-1);
         color: var(--color-foreground-2);
         border-radius: 2.5rem;
