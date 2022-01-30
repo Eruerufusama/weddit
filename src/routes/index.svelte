@@ -7,6 +7,12 @@
 
     $: $favoriteSubredditsStore = subreddits;
 
+    const addSub = () => {
+        if (newSub) {
+            subreddits = [...subreddits, newSub];
+            newSub = '';
+        }
+    }
 </script>
 
 
@@ -20,14 +26,7 @@
     <section>
         <div>
             <input type="text" bind:value={newSub} >
-            <button
-                on:click={() => {
-                    if (newSub) {
-                        subreddits = [...subreddits, newSub];
-                        newSub = '';
-                    }
-                    }}
-            >
+            <button on:click={addSub}>
                 Add sub
             </button>
         </div>

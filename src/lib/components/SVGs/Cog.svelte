@@ -36,7 +36,7 @@
         color: var(--color-foreground-2);
         padding: 1.25rem;
         border-radius: 4rem;
-        animation: rotate 10s infinite linear;
+        animation: rotate 20s infinite linear;
         background-color: transparent;
         transition: background-color 0.2s;
 

@@ -7,8 +7,8 @@
     import Title from './SubComponents/_Title.svelte';
     import Button from './SubComponents/_Button.svelte';
     import Selftext from './SubComponents/_Selftext.svelte';
-    import Image from './SubComponents/_Image.svelte';
     import Video from './SubComponents/_Video.svelte';
+    import Image from '../common/Image/Image.svelte';
     import { appendDataOfImage } from '$lib/functions/isImage';
     import type { RedditPost } from '$lib/types/subredditPosts';
     import { showAllImagesStore, showAllSelfpostsStore, showAllVideosStore } from '$lib/stores/settings/autoShow';
@@ -26,7 +26,8 @@
     $: showVideo = $showAllVideosStore;
 
 </script>
- 
+
+
 <BigPost>
     <svelte:fragment slot="top">
         <Thumbnail {thumbnail} />
@@ -50,3 +51,4 @@
         <Comments {num_comments} {permalink} />
     </svelte:fragment>
 </BigPost>
+
