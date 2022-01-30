@@ -13,7 +13,7 @@
 
 <style lang="scss">
     .selftext {
-        padding: 0.25rem min(2.5rem, 3vw) 2rem min(2.5rem, 3vw);
+        padding: 2rem min(2.5rem, 3vw) 2rem min(2.5rem, 3vw);
         line-height: 2rem;
     }
 </style>
