@@ -13,7 +13,6 @@
 <style lang="scss">
     h3 {
         //  Styling
-            font-size: 1.8rem;
             a {
                 color: inherit;
             }

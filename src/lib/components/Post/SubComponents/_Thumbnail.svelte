@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { isCompactStore } from '$lib/stores/settings/postStyles';
+
     export let thumbnail;
 </script>
 
@@ -9,6 +11,7 @@
                 : thumbnail
         }
     alt="Thumbnail"
+    class={$isCompactStore && 'compact'}
 >
 
 <style lang="scss">
@@ -29,5 +32,9 @@
         @media (max-width: 380px) {
             display: none;
         }
+    }
+    .compact {
+        width: 64px;
+        height: 64px;
     }
 </style>

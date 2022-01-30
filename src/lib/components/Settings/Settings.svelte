@@ -2,17 +2,22 @@
     import { showAllImagesStore, showAllSelfpostsStore, showAllVideosStore } from '$lib/stores/settings/autoShow';
     import Cog from "$lib/components/SVGs/Cog.svelte";
     import Checkbox from './_Checkbox.svelte';
-import Category from './_Category.svelte';
+    import Category from './_Category.svelte';
+    import { isCompactStore } from '$lib/stores/settings/postStyles';
 
     let toggleImages = $showAllImagesStore;
     let toggleVideos = $showAllVideosStore;
     let toggleSelfposts = $showAllSelfpostsStore;
+
+    let isCompact = $isCompactStore;
 
     let isOpen = false;
     
     $: showAllImagesStore.update(() => toggleImages)
     $: showAllVideosStore.update(() => toggleVideos)
     $: showAllSelfpostsStore.update(() => toggleSelfposts)
+
+    $: isCompactStore.update(() => isCompact)
 </script>
 <section class={isOpen && 'is-open'}>
     <div>
@@ -25,6 +30,11 @@ import Category from './_Category.svelte';
             </Checkbox>
             <Checkbox toggle={toggleSelfposts} name="self" on:click={() => toggleSelfposts = !toggleSelfposts}>
                 Self-posts
+            </Checkbox>
+        </Category>
+        <Category title="Post style">
+            <Checkbox toggle={isCompact} name="compact" on:click={() => isCompact = !isCompact}>
+                Compact
             </Checkbox>
         </Category>
     </div>
