@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 
-let favoriteSubreddits = ['reactjs', "sveltejs"];
+let favoriteSubreddits = ["sveltejs"];
 
 if (typeof localStorage !== 'undefined') {
     if (localStorage.getItem('favoriteSubreddits') !== null) {

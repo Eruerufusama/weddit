@@ -1,13 +1,23 @@
 <script lang="ts">
+    import { onMount } from "svelte";
+    import { fly } from 'svelte/transition';
+    
+
     import Close from "../SVGs/Close.svelte";
 
     export let subreddit;
+
 </script>
 
 
-<li>
+<li
+    in:fly={{y: 200}}
+    out:fly={{x: 100}}
+>
     <h3>
-        <a href={`/r/${subreddit}`}><span>/R/</span>{ subreddit.toUpperCase() }</a>
+        <a href={`/r/${subreddit}`}>
+            <span>/R/</span>{ subreddit.toUpperCase() }
+        </a>
     </h3>
     <button on:click>
         <Close />
@@ -17,6 +27,8 @@
 
 <style lang="scss">
     li {
+        box-sizing: border-box;
+        font-size: 2rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -25,6 +37,11 @@
         border-radius: 0.625rem;
         background-color: var(--color-background-1);
         min-width: min(90vw, 300px);
+        @media (max-width: 460px) {
+            font-size: 1.25rem;
+            gap: 0.625rem;
+            padding: 0.625rem;
+        }
     }
     a {
         color: inherit;
@@ -32,7 +49,6 @@
     span {
         color: var(--color-foreground-dimmed);
         font-weight: 200;
-        font-size: 2rem;
     }
     h3 {
         padding: 1.25rem;

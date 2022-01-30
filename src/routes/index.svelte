@@ -1,6 +1,6 @@
 <script>
     import { favoriteSubredditsStore } from '$lib/stores/saved/subreddits';
-    import SubredditListItem from '../lib/components/common/SubredditListItem.svelte';
+    import DeletableItem from '../lib/components/common/DeletableItem.svelte';
 
     let newSub;
     let subreddits = $favoriteSubredditsStore;
@@ -19,18 +19,31 @@
 <main>
     <ul>
         {#each subreddits as subreddit, index}
-            <SubredditListItem {subreddit} on:click={() => subreddits = [...subreddits.filter((v, i) => i !== index)]} />
+            <DeletableItem
+                {subreddit}
+                on:click={() => subreddits = [...subreddits.filter((v, i) => i !== index)]}
+            />
         {/each}
         
     </ul>
     <section>
-        <div>
-            <input type="text" bind:value={newSub} >
+        <div class="input-field-and-button">
+            <div class="input-wrapper">
+                <p>/r/</p>
+                <input
+                    name="add-sub-to-favorites"
+                    type="text"
+                    bind:value={newSub}
+                    placeholder="memes"
+                >
+            </div>
             <button on:click={addSub}>
-                Add sub
+                SAVE
             </button>
         </div>
-        <h2>ADD YOUR ❤️<span>FAVORITE</span>❤️ SUBREDDITS</h2>
+        <label for="add-sub-to-favorites">
+            ADD YOUR ❤️<span>FAVORITE</span>❤️ SUBREDDITS
+        </label>
     </section>
 </main>
 
@@ -60,39 +73,64 @@
             background-color: var(--color-background-3);
             padding: 5rem 0rem;
             gap: 1.25rem;
-
+            font-size: 2.5rem;
+            @media (max-width: 560px) {
+                font-size: 1.5rem;
+            }
             
         }
     }
     button {
-        font-size: 2rem;
         background-color: var(--color-background-1);
-        border: 2px solid white;
+        border: 3px solid white;
         color: var(--color-foreground-1);
         padding: 0 2.5rem;
         border-radius: 3.5rem;
         margin-left: -3.5rem;
+        font-size: inherit;
+        font-family: inherit;
     }
 
     div {
         display: flex;
-        align-items: stretch;
         justify-content: center;
 
     }
-
-    input[type=text] {
-        font-size: 2.5rem;
-        padding: 1.25rem 2.5rem;
+    .input-field-and-button {
+        align-items: stretch;
+    }
+    .input-wrapper {
+        align-items: center;
+        background-color: white;
         border-top-left-radius: 3.5rem;
         border-bottom-left-radius: 3.5rem;
+        border: none;
+        padding: 1.25rem 2.5rem 1.25rem 2.5rem;
     }
-    h2 {
+
+    input[type=text] {
+        border-top-left-radius: 3.5rem;
+        border-bottom-left-radius: 3.5rem;
+        font-size: inherit;
+        font-family: inherit;
+        background-color: inherit;
+        border: none;
+
+        &:active, &:focus-visible {
+            outline: none;
+        }
+    }
+    label {
         text-align: center;
 
         span {
             font-weight: 200;
             font-style: italic;
         }
+    }
+    p {
+        font-size: inherit;
+        font-family: inherit;
+        color: var(--color-background-1)
     }
 </style>
