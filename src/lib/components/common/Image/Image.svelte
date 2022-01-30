@@ -3,19 +3,10 @@
 
     export let image;
     export let showImage;
-
-    let loaded = false;
-    let img;
-
-    onMount(() => {
-        img.onload = () => {
-            loaded = true;
-        }
-    })
 </script>
 
 {#if showImage}
-    <img src={image.url} alt="Reddit submission" bind:this={img} />
+    <img src={image.url} alt="Reddit submission"/>
 {/if}
 
 <style lang="scss">
