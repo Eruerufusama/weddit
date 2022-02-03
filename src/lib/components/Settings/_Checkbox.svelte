@@ -7,7 +7,7 @@
     $: isChecked.update(n => n);
 </script>
 
-<li>
+<li on:click={() => $isChecked = !$isChecked}>
     <label for={name}>
         <slot />
     </label>
