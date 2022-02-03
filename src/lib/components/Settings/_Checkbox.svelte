@@ -1,11 +1,21 @@
 <script lang="ts">
-    export let toggle;
-    export let name;
+    import type { Writable } from "svelte/store";
+
+    export let isChecked: Writable<boolean>;
+    export let name: string;
+    
+    $: isChecked.update(n => n);
 </script>
 
-<li on:click>
-    <label for={name}><slot /></label>
-    <input {name} type="checkbox" bind:checked={toggle} />
+<li>
+    <label for={name}>
+        <slot />
+    </label>
+    <input
+        {name}
+        type="checkbox"
+        bind:checked={$isChecked}
+    />
 </li>
 
 <style lang="scss">

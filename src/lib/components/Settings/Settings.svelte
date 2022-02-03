@@ -1,45 +1,30 @@
 <script lang="ts">
+
     import { showAllImagesStore, showAllSelfpostsStore, showAllVideosStore } from '$lib/stores/settings/autoShow';
+    import { isCompactStore } from '$lib/stores/settings/postStyles';
     import Cog from "$lib/components/SVGs/Cog.svelte";
     import Checkbox from './_Checkbox.svelte';
     import Category from './_Category.svelte';
-    import { isCompactStore } from '$lib/stores/settings/postStyles';
-
-    let toggleImages = $showAllImagesStore;
-    let toggleVideos = $showAllVideosStore;
-    let toggleSelfposts = $showAllSelfpostsStore;
-
-    let isCompact = $isCompactStore;
 
     let isOpen = false;
-    
-    $: showAllImagesStore.update(() => toggleImages)
-    $: showAllVideosStore.update(() => toggleVideos)
-    $: showAllSelfpostsStore.update(() => toggleSelfposts)
 
-    $: isCompactStore.update(() => isCompact)
 </script>
+
+
 <section class={isOpen && 'is-open'}>
     <div>
         <Category title="Show all...">
-            <Checkbox toggle={toggleImages} name="img" on:click={() => toggleImages = !toggleImages}>
-                Images
-            </Checkbox>
-            <Checkbox toggle={toggleVideos} name="vid" on:click={() => toggleVideos = !toggleVideos}>
-                Videos
-            </Checkbox>
-            <Checkbox toggle={toggleSelfposts} name="self" on:click={() => toggleSelfposts = !toggleSelfposts}>
-                Self-posts
-            </Checkbox>
+            <Checkbox isChecked={showAllImagesStore} name="img">Images</Checkbox>
+            <Checkbox isChecked={showAllVideosStore} name="img">Videos</Checkbox>
+            <Checkbox isChecked={showAllSelfpostsStore} name="img">Self-posts</Checkbox>
         </Category>
         <Category title="Post style">
-            <Checkbox toggle={isCompact} name="compact" on:click={() => isCompact = !isCompact}>
-                Compact
-            </Checkbox>
+            <Checkbox isChecked={isCompactStore} name="compact">Compact</Checkbox>
         </Category>
     </div>
     <Cog on:click={() => isOpen = !isOpen} {isOpen} />
 </section>
+
 
 <style lang="scss">
     section {
