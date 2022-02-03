@@ -1,38 +1,36 @@
 <script>
 
-//  Imports
+    // Components
     import Button from "./SubComponents/_Button.svelte";
     import AuthoringData from "./SubComponents/_AuthoringData.svelte";
     import Comments from "./Comments.svelte";
     import VotingData from "./SubComponents/_VotingData.svelte";
     import Minus from "../SVGs/Minus.svelte";
     import Plus from "../SVGs/Plus.svelte";
+    // Functions
     import { marked } from 'marked';
 
-//  Props
+    // Props
     export let comment;
     const { body, author, created, score, score_hidden, is_submitter, distinguished } = comment;
-
-//  States
+    const is_mod = distinguished === 'moderator';
+    
+    // States
     let showBody = true;
+    let svg = showBody ? Minus : Plus;
 
-    console.log(comment);
 </script>
 
 
 <article>
-    <section class={`header ${is_submitter && 'op'} ${distinguished === 'moderator' && 'mod'}`}>
+    <section class="header" class:is_submitter class:is_mod>
         <div class="left">
-
             <Button on:click={() => showBody = !showBody}>
-                {#if showBody } <Minus /> {:else } <Plus /> {/if }
+                <svelte:component this={svg} />
             </Button>
             <AuthoringData {author} {created} />
-
         </div>
-
         <VotingData {score} {score_hidden} />
-
     </section>
 
     {#if showBody }
@@ -51,48 +49,34 @@
 
 <style lang="scss">
     article {
-        //  Styling
-            box-shadow: -5px 0 5px 0 var(--color-shadow);
+        box-shadow: -5px 0 5px 0 var(--color-shadow);
         
         .header {
-            //  Layout
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            //  Styling
-                background-color: var(--color-background-3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background-color: var(--color-background-3);
         
                 .left {
-                    //  Layout
                     display: flex;
                     align-items: center;
                 }
             }
-        .op {
-            //  Styling
-                background-color: var(--color-op);
-        }
-        .mod {
-            //  Styling
-                background-color: var(--color-mod);
-        }
-
+        .is_submitter { background-color: var(--color-op); }
+        .is_mod { background-color: var(--color-mod); }
         .body {
-            //  Layout
-                display: flex;
-                flex-direction: column;
-                gap: 1.25rem;
-                padding: 1.25rem 0 1.25rem min(1.25rem, 2vw);
-            //  Styling
-                background-color: var(--color-background-1);
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            padding: 1.25rem 0 1.25rem min(1.25rem, 2vw);
 
+            background-color: var(--color-background-1);
             .markdown {
-                //  Layout
-                    padding-right: 1.25rem;
-                    line-height: 2rem;
-                //  Styling
-                    color: var(--color-foreground-1);
+                padding-right: 1.25rem;
+                line-height: 2rem;
 
+                color: var(--color-foreground-1);
             }
         }
     }

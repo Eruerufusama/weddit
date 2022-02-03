@@ -1,5 +1,5 @@
 <button on:click>
-    <slot />
+    <slot>Missing button-text</slot>
 </button>
 
 <style lang="scss">

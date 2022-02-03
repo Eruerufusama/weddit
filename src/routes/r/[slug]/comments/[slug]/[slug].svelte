@@ -8,30 +8,22 @@
 </script>
 
 <div>
-    <aside>
-        <Post {post} />
-    </aside>
-    <main>
-        <Comments {data} />
-    </main>
+    <aside><Post {post} /></aside>
+    <main><Comments {data} /></main>
 </div>
 
 <style lang="scss">
     div {
-        //  Layout
-            display: grid;
-            place-items: center;
-            gap: 2.5rem;
-
+        display: grid;
+        place-items: center;
+        gap: 2.5rem;
         main, aside {
-            //  Layout
-                width: min(960px, 95vw);
+            width: min(960px, 95vw);
         }
         main {
-            //  Layout
-                display: flex;
-                flex-direction: column;
-                gap: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
         }
     }
 </style>

@@ -39,5 +39,5 @@
 </svelte:head>
 
 <Header />
-<slot />
+<slot>No page, only layout. Big sad.</slot>
 <Footer />

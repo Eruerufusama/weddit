@@ -1,15 +1,23 @@
 <article>
     <div>
         <section class="top-section">
-            <slot name="top"/>
+            <slot name="top">
+                No top-section was provided
+            </slot>
         </section>
-        <slot name="button" />
+        <slot name="button">
+            No button was provided
+        </slot>
     </div>
     <section class="middle-section">
-        <slot name="middle"/>
+        <slot name="middle">
+            No middle-section was provided
+        </slot>
     </section>
     <section class="bottom-section">
-        <slot name="bottom"/>
+        <slot name="bottom">
+            No bottom-section was provided
+        </slot>
     </section>
 </article>
 

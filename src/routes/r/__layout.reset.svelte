@@ -39,7 +39,7 @@
 </svelte:head>
 <div>
     <aside><Settings /></aside>
-    <main><slot /></main>
+    <main><slot>Missing main section :(</slot></main>
 </div>
 
 

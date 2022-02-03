@@ -11,7 +11,7 @@
                 : thumbnail
         }
     alt="Thumbnail"
-    class={$isCompact && 'compact'}
+    class:compact={$isCompact}
 >
 
 <style lang="scss">

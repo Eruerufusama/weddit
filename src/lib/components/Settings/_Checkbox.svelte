@@ -9,7 +9,7 @@
 
 <li on:click={() => $isChecked = !$isChecked}>
     <label for={name}>
-        <slot />
+        <slot>Missing label</slot>
     </label>
     <input
         {name}

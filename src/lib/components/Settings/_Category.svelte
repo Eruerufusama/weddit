@@ -5,7 +5,7 @@
 <div>
     <h3>{ title }</h3>
     <ul>
-        <slot />
+        <slot>Expecting list-elements...</slot>
     </ul>
 </div>
 
