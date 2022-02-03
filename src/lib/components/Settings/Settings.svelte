@@ -2,6 +2,8 @@
     // Stores
     import { showAllImages, showAllSelfposts, showAllVideos } from '$lib/stores/settings/autoShow';
     import { isCompact } from '$lib/stores/settings/postStyles';
+    // Use-directives
+    import { clickOutside } from '$lib/functions/clickOutside';
     // Components
     import Cog from "$lib/components/SVGs/Cog.svelte";
     import Checkbox from './_Checkbox.svelte';
@@ -13,7 +15,7 @@
 
 
 <section class={isOpen && 'is-open'}>
-    <div>
+    <div use:clickOutside on:outclick={() => (isOpen = false)}>
         <Category title="Show all...">
             <Checkbox isChecked={showAllImages} name="img">Images</Checkbox>
             <Checkbox isChecked={showAllVideos} name="vid">Videos</Checkbox>
