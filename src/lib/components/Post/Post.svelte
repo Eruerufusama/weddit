@@ -11,10 +11,10 @@
     import Image from '../common/Image/Image.svelte';
     import { appendDataOfImage } from '$lib/functions/isImage';
     import type { RedditPost } from '$lib/types/subredditPosts';
-    import { showAllImagesStore, showAllSelfpostsStore, showAllVideosStore } from '$lib/stores/settings/autoShow';
+    import { showAllImages, showAllSelfposts, showAllVideos } from '$lib/stores/settings/autoShow';
     import BigPost from './styles/BigPost.svelte';
     import CompactPost from './styles/CompactPost.svelte';
-    import { isCompactStore } from '$lib/stores/settings/postStyles';
+    import { isCompact } from '$lib/stores/settings/postStyles';
 
 //  Props
     export let post: RedditPost;
@@ -23,11 +23,10 @@
     const video = secure_media?.reddit_video?.fallback_url;
     
 //  States
-    $: showImage = $showAllImagesStore;
-    $: showSelftext = $showAllSelfpostsStore;
-    $: showVideo = $showAllVideosStore;
-
-    $: isPostCompact = $isCompactStore;
+    $: showImage = $showAllImages;
+    $: showSelftext = $showAllSelfposts;
+    $: showVideo = $showAllVideos;
+    $: isPostCompact = $isCompact;
 
 </script>
 

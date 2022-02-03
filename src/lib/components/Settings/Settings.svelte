@@ -1,7 +1,8 @@
 <script lang="ts">
-
-    import { showAllImagesStore, showAllSelfpostsStore, showAllVideosStore } from '$lib/stores/settings/autoShow';
-    import { isCompactStore } from '$lib/stores/settings/postStyles';
+    // Stores
+    import { showAllImages, showAllSelfposts, showAllVideos } from '$lib/stores/settings/autoShow';
+    import { isCompact } from '$lib/stores/settings/postStyles';
+    // Components
     import Cog from "$lib/components/SVGs/Cog.svelte";
     import Checkbox from './_Checkbox.svelte';
     import Category from './_Category.svelte';
@@ -14,12 +15,12 @@
 <section class={isOpen && 'is-open'}>
     <div>
         <Category title="Show all...">
-            <Checkbox isChecked={showAllImagesStore} name="img">Images</Checkbox>
-            <Checkbox isChecked={showAllVideosStore} name="img">Videos</Checkbox>
-            <Checkbox isChecked={showAllSelfpostsStore} name="img">Self-posts</Checkbox>
+            <Checkbox isChecked={showAllImages} name="img">Images</Checkbox>
+            <Checkbox isChecked={showAllVideos} name="vid">Videos</Checkbox>
+            <Checkbox isChecked={showAllSelfposts} name="img">Self-posts</Checkbox>
         </Category>
         <Category title="Post style">
-            <Checkbox isChecked={isCompactStore} name="compact">Compact</Checkbox>
+            <Checkbox isChecked={isCompact} name="compact">Compact</Checkbox>
         </Category>
     </div>
     <Cog on:click={() => isOpen = !isOpen} {isOpen} />

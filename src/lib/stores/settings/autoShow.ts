@@ -1,36 +1,36 @@
 import { writable } from 'svelte/store';
 
-let showAllImages = false;
-let showAllSelfposts = false;
-let showAllVideos = false;
+let showAllImagesValue = false;
+let showAllSelfpostsValue = false;
+let showAllVideosValue = false;
 
 if (typeof localStorage !== 'undefined') {
     if (localStorage.getItem('showAllImages') !== null) {
-        showAllImages = JSON.parse(localStorage.getItem('showAllImages'));
+        showAllImagesValue = JSON.parse(localStorage.getItem('showAllImages'));
     }
     if (localStorage.getItem('showAllSelfposts') !== null) {
-        showAllSelfposts = JSON.parse(localStorage.getItem('showAllSelfposts'))
+        showAllSelfpostsValue = JSON.parse(localStorage.getItem('showAllSelfposts'));
     }
     if (localStorage.getItem('showAllVideos') !== null) {
-        showAllVideos = JSON.parse(localStorage.getItem('showAllVideos'))
+        showAllVideosValue = JSON.parse(localStorage.getItem('showAllVideos'));
     }
 }
 
-export const showAllImagesStore = writable(showAllImages);
-export const showAllSelfpostsStore = writable(showAllSelfposts);
-export const showAllVideosStore = writable(showAllVideos);
+export const showAllImages = writable(showAllImagesValue);
+export const showAllSelfposts = writable(showAllSelfpostsValue);
+export const showAllVideos = writable(showAllVideosValue);
 
-showAllImagesStore.subscribe((newValue) => {
+showAllImages.subscribe((newValue) => {
     if (typeof localStorage !== 'undefined') {
         localStorage.setItem('showAllImages', JSON.stringify(newValue));
     }
 });
-showAllSelfpostsStore.subscribe((newValue) => {
+showAllSelfposts.subscribe((newValue) => {
     if (typeof localStorage !== 'undefined') {
         localStorage.setItem('showAllSelfposts', JSON.stringify(newValue));
     }
 })
-showAllVideosStore.subscribe((newValue) => {
+showAllVideos.subscribe((newValue) => {
     if (typeof localStorage !== 'undefined') {
         localStorage.setItem('showAllVideos', JSON.stringify(newValue));
     }

@@ -7,4 +7,3 @@ export const postsStore: PostsStore = writable();
 export const submissionStore = writable();
 
 export const openStateStore = writable(false);
-
