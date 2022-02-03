@@ -119,6 +119,10 @@
         &:active, &:focus-visible {
             outline: none;
         }
+        color: var(--color-background-1);
+        @media (prefers-color-scheme: light) {
+            color: var(--color-foreground-1)
+        }
     }
     label {
         text-align: center;
@@ -131,6 +135,9 @@
     p {
         font-size: inherit;
         font-family: inherit;
-        color: var(--color-background-1)
+        color: var(--color-background-1);
+        @media (prefers-color-scheme: light) {
+            color: var(--color-foreground-1)
+        }
     }
 </style>
