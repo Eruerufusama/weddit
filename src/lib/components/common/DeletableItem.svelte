@@ -39,11 +39,11 @@
 	}
 	span {
 		color: var(--color-foreground-dimmed);
-		font-weight: 200;
+		font-weight: 300;
 	}
 	h3 {
 		padding: 1.25rem;
-		font-weight: 800;
+		font-weight: 700;
 	}
 	button {
 		color: var(--color-foreground-dimmed);
