@@ -1,17 +1,17 @@
 import { writable } from 'svelte/store';
 
-let favoriteSubreddits = ["sveltejs"];
+let favoriteSubreddits = ['sveltejs'];
 
 if (typeof localStorage !== 'undefined') {
-    if (localStorage.getItem('favoriteSubreddits') !== null) {
-        favoriteSubreddits = JSON.parse(localStorage.getItem('favoriteSubreddits'));
-    }
+	if (localStorage.getItem('favoriteSubreddits') !== null) {
+		favoriteSubreddits = JSON.parse(localStorage.getItem('favoriteSubreddits'));
+	}
 }
 
 export const favoriteSubredditsStore = writable(favoriteSubreddits);
 
 favoriteSubredditsStore.subscribe((newList) => {
-    if (typeof localStorage !== 'undefined') {
-        localStorage.setItem('favoriteSubreddits', JSON.stringify(newList));
-    }
+	if (typeof localStorage !== 'undefined') {
+		localStorage.setItem('favoriteSubreddits', JSON.stringify(newList));
+	}
 });

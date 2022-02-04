@@ -14,7 +14,7 @@ const config = {
 
 	kit: {
 		adapter: adapter('scss'),
-		target: '#svelte'
+		target: '#svelte',
 	}
 };
 

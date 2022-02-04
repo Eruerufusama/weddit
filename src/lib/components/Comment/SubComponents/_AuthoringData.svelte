@@ -1,31 +1,29 @@
 <script>
+	//  Imports
+	import { getTimeSincePosted } from '$lib/functions/time';
 
-//  Imports
-    import { getTimeSincePosted } from "$lib/functions/time";
-
-//  Props
-    export let author;
-    export let created;
-    const { time, format } = getTimeSincePosted(created);
-    const timeSuffix = time === 1 ? '' : 's';
-
+	//  Props
+	export let author;
+	export let created;
+	const { time, format } = getTimeSincePosted(created);
+	const timeSuffix = time === 1 ? '' : 's';
 </script>
 
 <p>
-    Posted
-    <strong>{ time } { format }{ timeSuffix } ago</strong>
-    by
-    <em>{ author }</em>
+	Posted
+	<strong>{time} {format}{timeSuffix} ago</strong>
+	by
+	<em>{author}</em>
 </p>
 
 <style lang="scss">
-    em {
-        color: var(--color-user);
-    }
-    p {
-        //  Layout
-            padding: 0 1.25rem;
-            color: var(--color-foreground-dimmed);
-            font-family: 'Roboto Condensed', sans-serif;
-    }
+	em {
+		color: var(--color-user);
+	}
+	p {
+		//  Layout
+		padding: 0 1.25rem;
+		color: var(--color-foreground-dimmed);
+		font-family: 'Roboto Condensed', sans-serif;
+	}
 </style>

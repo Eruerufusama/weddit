@@ -1,19 +1,22 @@
 <svg
-    aria-hidden="true"
-    focusable="false"
-    data-prefix="fas"
-    data-icon="caret-up"
-    class="svg-inline--fa fa-caret-up fa-w-10"
-    role="img"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 320 512"
+	aria-hidden="true"
+	focusable="false"
+	data-prefix="fas"
+	data-icon="caret-up"
+	class="svg-inline--fa fa-caret-up fa-w-10"
+	role="img"
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="0 0 320 512"
 >
-    <path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path>
+	<path
+		fill="currentColor"
+		d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"
+	/>
 </svg>
 
 <style lang="scss">
-    svg {
-        //  Layout
-            max-height: 2rem;
-    }
+	svg {
+		//  Layout
+		max-height: 2rem;
+	}
 </style>
