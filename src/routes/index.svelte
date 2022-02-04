@@ -15,7 +15,9 @@
     }
 </script>
 
-
+<svelte:head>
+    <title>Reddited - an edited reddit</title>
+</svelte:head>
 <main>
     <ul>
         {#each subreddits as subreddit, index}

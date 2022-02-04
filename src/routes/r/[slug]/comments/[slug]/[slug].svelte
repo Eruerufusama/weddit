@@ -7,6 +7,9 @@
 	const data = $submissionStore[1];
 </script>
 
+<svelte:head>
+	<title>Reddited - {post.subreddit} - {post.title}</title>
+</svelte:head>
 <div>
 	<aside><Post {post} /></aside>
 	<main><Comments {data} /></main>
