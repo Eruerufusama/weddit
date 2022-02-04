@@ -1,8 +1,11 @@
 <script lang="ts">
+	// Transitions
+	import { fly } from 'svelte/transition';
+
 	export let isOpen;
 </script>
 
-<button on:click class:isOpen>
+<button on:click class:isOpen transition:fly={{y: 500, duration: 1000}} aria-label="Show settings">
 	<svg
 		aria-hidden="true"
 		focusable="false"

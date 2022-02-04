@@ -7,7 +7,7 @@
 	$: Svg = isOpen ? Minus : Plus;
 </script>
 
-<button on:click>
+<button on:click aria-label="Toggle visibility of submission-content">
 	<svelte:component this={Svg} />
 </button>
 

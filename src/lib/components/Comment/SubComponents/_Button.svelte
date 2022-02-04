@@ -1,4 +1,4 @@
-<button on:click>
+<button on:click aria-label="Toggle collapsable state of comment-chain">
 	<slot>Missing button-text</slot>
 </button>
 

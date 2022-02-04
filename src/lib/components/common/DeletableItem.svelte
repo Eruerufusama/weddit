@@ -11,7 +11,7 @@
 			<span>/R/</span>{subreddit.toUpperCase()}
 		</a>
 	</h3>
-	<button on:click>
+	<button on:click aria-label="Delete subreddit-link">
 		<Close />
 	</button>
 </li>

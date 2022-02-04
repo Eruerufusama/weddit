@@ -9,6 +9,7 @@
 
 <svelte:head>
 	<title>Reddited - {post.subreddit} - {post.title}</title>
+	<meta name="description" content={`A Reddited version of a reddit-post and comment section in /r/${post.subreddit}`}>
 </svelte:head>
 <div>
 	<aside><Post {post} /></aside>

@@ -17,6 +17,7 @@
 
 <svelte:head>
     <title>Reddited - an edited reddit</title>
+    <meta name="description" content="Reddited - Customize your reddit-browsing experience with our lackluster app.">
 </svelte:head>
 <main>
     <ul>
@@ -39,7 +40,7 @@
                     placeholder="memes"
                 >
             </div>
-            <button on:click={addSub}>
+            <button on:click={addSub} aria-label="Add subreddit to favorites.">
                 SAVE
             </button>
         </div>
