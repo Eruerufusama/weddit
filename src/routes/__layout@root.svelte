@@ -1,9 +1,8 @@
 <script lang="ts">
-    import '../default.scss';
+	import '../default.scss'
 </script>
 
 <slot />
 
 <style lang="postcss">
-
 </style>

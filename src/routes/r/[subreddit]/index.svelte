@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Post from '$lib/components/Post/Post.svelte';
-	import { postsStore } from '$lib/stores/data/stores';
+	import Post from '$lib/components/Post/Post.svelte'
+	import { postsStore } from '$lib/stores/data/stores'
 
-	let isActive = true;
+	let isActive = true
 </script>
 
 <svelte:head>
 	<title>Reddited - {$postsStore[0].subreddit}</title>
-	<meta name="description" content={`The reddited-version of /r/${$postsStore[0].subreddit}`}>
+	<meta name="description" content={`The reddited-version of /r/${$postsStore[0].subreddit}`} />
 </svelte:head>
 <div class="page">
 	<!-- <ul>
