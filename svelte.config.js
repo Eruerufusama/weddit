@@ -7,14 +7,13 @@ const config = {
 		preprocess({
 			scss: {
 				includePaths: ['src/styles'],
-				prependData: `@use 'globals' as *;`,
-			},
+				prependData: `@use 'globals' as *;`
+			}
 		})
 	],
 
 	kit: {
-		adapter: adapter('scss'),
-		target: '#svelte',
+		adapter: adapter('scss')
 	}
 };
 
